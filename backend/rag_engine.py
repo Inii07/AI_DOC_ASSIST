@@ -40,7 +40,7 @@ def answer_question(question: str) -> str:
     retriever = vectordb.as_retriever(search_kwargs={"k": 4})
     docs = retriever.invoke(question)
 
-    context = "\n\n".join([doc.page_content for doc in docs])
+     context = "\n\n".join([doc.page_content for doc in docs])
 
     prompt = f"""Use the following context to answer the question.
 If the answer is not in the context, say "I couldn't find that in the uploaded document."
